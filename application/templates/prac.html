@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Information Retrieval process with Natural Language Process</title>
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styling.css">
+</head>
+<body>
+    <div class = "Sabse-Upar", id="0">
+    <h1><bold>Rank BM25 and Word2Vec model</bold></h1>
+    <p class = "Sabse-Upar">We will be using <em>Rank BM25 model along with Word2Vec</em> for this task.</p>
+    <p class = "Sabse-Upar">To know about the author please click <a href="#lastest">here</a></p>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <nav>
+        <div class = "Outlining">
+            <dl>
+                <dt><strong>Why not traditional stastical techniques</strong></dt>
+                <dd>Here we discuss the disadvantages of Deep Learning techniques v/s Traditional statistical techniques</dd>
+                <p>To skip directly to this topic, please click <a href="#1">here.</a></p>
+            <br>
+                <dt><strong>Rank BM 25 procedure for Information Retrieval</strong></dt>
+                <dd>Here we discuss that why we are using Rank BM 25</dd>
+                <p>To skip directly to this topic, please click <a href="#2">here.</a></p>
+            <br>
+                <dt><strong>Word2Vec model</strong></dt>
+                <dd>Here we discus one of the short comings of RNN and then gently introduce LSTM cells</dd>
+                <p>To skip directly to this topic, please click <a href="#3">here.</a></p>
+            <br>
+            
+                </dl>
+        </div>
+    </nav>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class = "Extra-Info">
+    <p>We will be using Chris Olah's blog for our reference. Chris Olah is one of the decorated Data Scientist present in the academia world. The link to his blog is <a href="https://colah.github.io/", target="_blank">here</a></p>
+        </div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class = "First Topic", id="1">
+    <h2>Why are we using Rank BM25?</h2>
+    <p>The bm25 rank feature implements the Okapi BM25 ranking function used to estimate the relevance of a text document given a search query. It is a pure text ranking feature which operates over an indexed string field. The feature is very cheap to compute, about 3-4 times faster than nativeRank, while still providing a good rank score quality wise. It is a good candidate to use in a first phase ranking function when ranking text documents.
+        The problem that BM25 (Best Match 25) tries to solve is similar to that of TFIDF (Term Frequency, Inverse Document Frequency), that is representing our text in a vector space (it can be applied to field outside of text, but text is where it has the biggest presence) so we can search/find similar documents for a given document or query.
+
+The gist behind TFIDF is that is relies on two main factors to determine whether a document is similar to our query.
+
+Term Frequency aka tf: how often does the term occur in the document? 3 times? 10 times?
+Inverse Document Frequency aka idf: measures how many documents the term appeared in. Inverse document frequency (1/df) then measures how special the term is. Is the term a very rare (occurs in just one doc) word? Or a relatively common one (occurs in nearly all the docs)?
+Using these two factors, TFIDF measures the relative concentration of a term in a given piece of document. If the term is common in this article, but relatively rare elsewhere, then the TFIDF score will be high, and documents that have higher TFIDF score would be considered as very relevant to the search term.
+
+BM25 improves upon TFIDF by casting relevance as a probability problem. A relevance score, according to probabilistic information retrieval, ought to reflect the probability a user will consider the result relevant. Instead of going through how the formula was derived, here we'll take a look a the formula and try to digest it to see why it makes some kind of sense.
+        </p>
+        
+
+        <div class="Third Topic", id="3">
+            <h2>Word2Vec model</h2>
+            <p>Word2vec is a technique for natural language processing. The word2vec algorithm uses a neural network model to learn word associations from a large corpus of text. Once trained, such a model can detect synonymous words or suggest additional words for a partial sentence. As the name implies, word2vec represents each distinct word with a particular list of numbers called a vector. The vectors are chosen carefully such that a simple mathematical function (the cosine similarity between the vectors) indicates the level of semantic similarity between the words represented by those vectors.
+            </p> <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <p>To go at the top of this page, then click <a href="#top", target="_parent">here.</a></p>
+            <br>
+            <br>
+            <br>
+            <br>
+    <div class = "Last", id="lastest">
+    <footer>
+        <p><strong>Ayush Yajnik</strong><br>Manhattan<br>New York City<br>New York<br>USA<br><br><u>Phone Number: +19293192533</u></p>
+        </footer>
+            </div>
+        </body>
+</html>
+
+<style>
+    /*----------------------------------------------------Global Variable----------------------------------------------------------------------------*/
+p{
+    font-weight: bold;
+    font-style: oblique;
+    line-height: 1.5;
+    color: black;
+}
+body{
+    background-color: seashell;
+    color: #333333;
+    /*font-family: Helvetica, Arial, sans-serif;*/
+
+
+}
+
+*{
+    /*color: darkslategrey;*/
+    font-family: serif;
+    color: #333333;
+
+}
+a{
+    color: gold;
+    font-weight:bold;
+    display: inline-block;
+}
+a:hover{
+    text-decoration: none;
+    display: inline-block;
+}
+h2{
+    background-color: crimson;
+
+}
+/*-------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*----------------------------------------------------------The First div class--------------------------------------------------------------------*/
+h1{
+    background: crimson;
+    padding: 8px;
+    font-size: 120px;
+
+}
+p.Sabse-Upar{
+    font-size: 30px;
+    color:darkslategreyy;
+}
+
+.Sabse-Upar a{
+    color: #F7FFF7;
+    background: #2F3061;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.Sabse-Upar .a:hover{
+    color: rgb(47, 48, 97, 80);
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------Footer-------------------------------------------------------------------------*/
+.Last{                                                     /* using class attribute*/
+    background: lightgreen;
+    width: 150px;
+    color:white;
+    padding: 50px 50% 50px 50%;
+    margin: auto auto;
+    font-family: 'Bebas Neue', cursive;
+    text-align: center;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------The Nav Tab--------------------------------------------------------------------*/
+.Outlining{                                                    /* In this section we are styling the link to make it a button*/
+    font-size: 30px;
+    padding: 8px;
+    font-align: Middle;
+    background: orangered;
+    font-weight: bold;
+    margin: 0 auto;
+    width: 1000px;
+}
+
+
+.Outlining dl dd{
+    color:lightyellow;
+}
+/*------------------------------------------------------------------------------------------------------------------------------------------------*/
+/*------------------------------------------------------------extra info--------------------------------------------------------------------------*/
+.Extra-Info a{                                                  /* In this section we are styling the link to make it a button*/
+    color: gold;
+
+    padding: 1px;
+    text-decoration: none;
+    border-radius: 2px;
+}
+
+.Extra-Info a:hover{
+        color: gold;
+
+}
+        </style>
