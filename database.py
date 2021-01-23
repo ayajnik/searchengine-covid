@@ -23,3 +23,7 @@ df.to_sql('Article_info_new', con = con)
 
 
 
+
+
+
+
