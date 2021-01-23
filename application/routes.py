@@ -57,9 +57,31 @@ def index():
             file_name = form.file.data
             database(name=file_name.filename, data=file_name.read())
             ##print("FILE : ".format(file_name.filename))
-            return render_template("index.html", form=form)
+            '''
+            For rendering results on HTML GUI
+            '''
+            int_features = [str(x) for x in request.form.values()]
+            words = print_answers(int_features)  # checking the vocabulary
 
-    return render_template("index.html", index=True )
+            print('\n')
+            xy = render_template('index.html', prediction_text='The most similar words are : {}'.format(words))
+            print('\n')
+            print('The total number of similar words, ', len(words))
+            print('\n')
+            return xy
+
+            
+@app.route('/predict_api',methods=['POST'])
+def predict_api():
+    '''
+    For direct API calls trought request
+    '''
+    data = request.get_json(force=True)
+    prediction = print_answers(data)
+
+    output = prediction[0]
+    return jsonify(output)
+
 
 
 class UploadForm(Form):
