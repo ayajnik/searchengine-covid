@@ -6,8 +6,10 @@ from flask_wtf.file import FileField
 from wtforms import SubmitField
     #import flask_api
 from flask_wtf import Form
+import bm25
+from bm25 import print_answers
 
-
+@app.route("/")
 @app.route('/introduction', methods=['GET','POST'])
 def introduction():
 
@@ -16,7 +18,7 @@ def introduction():
         if form.validate_on_submit():
             file_name_1 = form.file.data
 
-            return redirect(url_for("complete.html", form=form))
+            return redirect(url_for("index.html", form=form))
 
     return render_template("intro_1.html", form=form)
 
@@ -28,7 +30,7 @@ def samepage():
         if form.validate_on_submit():
             file_name_2 = form.file.data
 
-            return redirect(url_for("complete.html", form=form))
+            return redirect(url_for("index.html", form=form))
 
     return render_template("prac_1.html", form=form)
 
@@ -40,14 +42,23 @@ def anotherpage():
         if form.validate_on_submit():
             file_name_3 = form.file.data
 
-            return redirect(url_for("complete.html", form=form))
+            return redirect(url_for("index.html", form=form))
 
     return render_template("prac_1.html", form=form)
 
 
-#@app.route("/")
+#
 @app.route("/index")
 def index():
+    form = UploadForm()
+    ##when the button is pressed, it will give us a POST method
+    if request.method == "POST":
+        if form.validate_on_submit():
+            file_name = form.file.data
+            database(name=file_name.filename, data=file_name.read())
+            ##print("FILE : ".format(file_name.filename))
+            return render_template("index.html", form=form)
+
     return render_template("index.html", index=True )
 
 
